@@ -1,0 +1,53 @@
+﻿@model IEnumerable<CMS.Domain.ViewModels.CommentViewModel>
+@{
+    ViewData["Title"] = "ApproveComment";
+}
+
+<h2>ApproveComment</h2>
+<br />
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PostID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Content)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CommentedBy)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.CommentTime)
+            </th>
+            <th>
+                @Html.Raw("&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspActions")
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PostID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Content)
+
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CommentedBy)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CommentTime)
+                </td>
+                <td>
+                    <a asp-action="Approve" asp-route-id="@item.CommentID">Approve</a> | <a asp-action="Reject" asp-route-id="@item.CommentID">Reject</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

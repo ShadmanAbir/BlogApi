@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20180124103842_initial2.cs" />
+    <Compile Remove="Migrations\20180211075137_20d initial.cs" />
+    <Compile Remove="Migrations\20180211101004_initial 45.cs" />
+    <Compile Remove="Migrations\20180305180044_test.cs" />
+    <Compile Remove="Migrations\20180307121037_test_3_7.cs" />
+    <Compile Remove="Migrations\20180307121823_test_3_7-2.cs" />
+    <Compile Remove="Migrations\20180308222156_test_march_9.cs" />
+    <Compile Remove="Migrations\20180315171727_init_4.cs" />
+    <Compile Remove="Migrations\20180404102701_commentstatus_removed.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.0.1" />
+  </ItemGroup>
+
+</Project>

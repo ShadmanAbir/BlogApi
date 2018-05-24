@@ -1,0 +1,130 @@
+﻿@model CMS.Domain.ViewModels.PostViewModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+<div class="align-content-lg-center" style="margin-left:19%;margin-right:15%;">
+    <br />
+
+    <h3><b><i>Create new Post</i></b></h3>
+    <br />
+
+    <form asp-action="Create"  enctype="multipart/form-data" method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <div class="form-group" style="width:95%;">
+            <label asp-for="Title" class="control-label"></label>
+            <input asp-for="Title" class="form-control" />
+
+            <span asp-validation-for="Title" class="text-danger"></span>
+        </div>
+        <br />
+        <div class="form-group">
+            <label class="control-label">Catagories</label>
+            <br />
+            <select asp-for="Termid" class="form-control" style="width:95%;" multiple id="multiple_catagory">
+                @foreach (var item in Model.Terms)
+                {
+                    if (item.Type.Equals("0"))
+                    {
+                        <option value="@item.TermID">@item.Content</option>
+                    }
+                }
+
+            </select>
+            <br />
+            <span asp-validation-for="Termid" class="text-danger"></span>
+        </div>
+        <br />
+        <div class="form-group" style="width:95%;">
+            <label asp-for="Content" class="control-label"></label>
+
+            <textarea asp-for="Content" id="editor1" class="form-control"></textarea>
+
+            <span asp-validation-for="Content" class="text-danger"></span>
+        </div>
+
+        <br />
+        <div class="form-group">
+            <label class="control-label">Tags</label>
+            <br />
+            <select asp-for="Termid" class="form-control" style="width:95%;" multiple id="multiple_tag">
+                @foreach (var item in Model.Terms)
+                {
+                    if (item.Type.Equals("1"))
+                    {
+                        <option value="@item.TermID">@item.Content</option>
+                    }
+                }
+            </select>
+
+            <span asp-validation-for="Terms" class="text-danger"></span>
+        </div>
+        <br />
+        <div class="form-group" style="width:95%;">
+            <label asp-for="FeaturedImageUrl" class="control-label"></label>
+            <input name="Image" type="file" class="form-control" />
+            <span asp-validation-for="FeaturedImageUrl" class="text-danger"></span>
+        </div>
+        <br />
+        <div class="form-group" style="width:95%;">
+            <label asp-for="Url" class="control-label"></label>
+            <input asp-for="Url" class="form-control" />
+            <span asp-validation-for="Url" class="text-danger"></span>
+        </div>
+        <br />
+
+        <div class="form-group" style="width:95%;">
+            <input type="submit" value="Create" style="width:20%; margin-left:auto;" class="btn btn-primary btn-block" />
+        </div>
+    </form>
+    <br />
+    <br />
+    <br />
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+    <script src="~/select2/dist/js/select2.full.js"></script>
+    <script src="~/summernote/summernote.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#editor1').summernote({
+
+            });
+        });
+        $(document).ready(function () {
+            $('#multiple_tag').select2({
+                placeholder: "Select Tags"
+            });
+        });
+
+        $(document).ready(function () {
+            $('#multiple_catagory').select2({
+                placeholder: "Select Catagories"
+            });
+        });
+        $(document).ready(function () {
+            $('#editor1').summernote({
+                toolbar: [
+                    // [groupName, [list of button]]
+                    ['style', ['bold', 'italic', 'underline', 'clear', 'strikethrough', 'superscript', 'subscript']],
+                    ['font', ['fontname', 'fontsize', 'color']],
+                    ['para', ['ul', 'ol', 'paragraph', 'style', 'height']],
+                    ['Link', ['picture', 'link', 'video', 'table', 'hr']],
+                    ['Misc', ['undo', 'redo', 'fullscreen', 'codeview', 'help']]
+
+                ],
+                dialogsInBody: true,
+                dialogsFade: true,
+                //fontNames: ['Arial', 'Arial Black', 'Comic Sans MS', 'Courier New'],
+
+            });
+            $('.dropdown-toggle').dropdown();
+        });
+
+    </script>
+
+}

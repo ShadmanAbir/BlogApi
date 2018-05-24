@@ -1,0 +1,24 @@
+C:\Users\Ashraful Islam\Desktop\a\CMS\CMS.Core\bin\Debug\netstandard2.0\CMS.Core.deps.json
+C:\Users\Ashraful Islam\Desktop\a\CMS\CMS.Core\bin\Debug\netstandard2.0\CMS.Core.dll
+C:\Users\Ashraful Islam\Desktop\a\CMS\CMS.Core\bin\Debug\netstandard2.0\CMS.Core.pdb
+C:\Users\Ashraful Islam\Desktop\a\CMS\CMS.Core\bin\Debug\netstandard2.0\CMS.Domain.dll
+C:\Users\Ashraful Islam\Desktop\a\CMS\CMS.Core\bin\Debug\netstandard2.0\CMS.Domain.pdb
+C:\Users\Ashraful Islam\Desktop\a\CMS\CMS.Core\obj\Debug\netstandard2.0\CMS.Core.csprojResolveAssemblyReference.cache
+C:\Users\Ashraful Islam\Desktop\a\CMS\CMS.Core\obj\Debug\netstandard2.0\CMS.Core.csproj.CoreCompileInputs.cache
+C:\Users\Ashraful Islam\Desktop\a\CMS\CMS.Core\obj\Debug\netstandard2.0\CMS.Core.AssemblyInfoInputs.cache
+C:\Users\Ashraful Islam\Desktop\a\CMS\CMS.Core\obj\Debug\netstandard2.0\CMS.Core.AssemblyInfo.cs
+C:\Users\Ashraful Islam\Desktop\a\CMS\CMS.Core\obj\Debug\netstandard2.0\CMS.Core.csproj.CopyComplete
+C:\Users\Ashraful Islam\Desktop\a\CMS\CMS.Core\obj\Debug\netstandard2.0\CMS.Core.dll
+C:\Users\Ashraful Islam\Desktop\a\CMS\CMS.Core\obj\Debug\netstandard2.0\CMS.Core.pdb
+C:\Users\Shadm\OneDrive\Desktop\a\CMS\CMS.Core\bin\Debug\netstandard2.0\CMS.Core.deps.json
+C:\Users\Shadm\OneDrive\Desktop\a\CMS\CMS.Core\bin\Debug\netstandard2.0\CMS.Core.dll
+C:\Users\Shadm\OneDrive\Desktop\a\CMS\CMS.Core\bin\Debug\netstandard2.0\CMS.Core.pdb
+C:\Users\Shadm\OneDrive\Desktop\a\CMS\CMS.Core\bin\Debug\netstandard2.0\CMS.Domain.dll
+C:\Users\Shadm\OneDrive\Desktop\a\CMS\CMS.Core\bin\Debug\netstandard2.0\CMS.Domain.pdb
+C:\Users\Shadm\OneDrive\Desktop\a\CMS\CMS.Core\obj\Debug\netstandard2.0\CMS.Core.csprojResolveAssemblyReference.cache
+C:\Users\Shadm\OneDrive\Desktop\a\CMS\CMS.Core\obj\Debug\netstandard2.0\CMS.Core.csproj.CoreCompileInputs.cache
+C:\Users\Shadm\OneDrive\Desktop\a\CMS\CMS.Core\obj\Debug\netstandard2.0\CMS.Core.AssemblyInfoInputs.cache
+C:\Users\Shadm\OneDrive\Desktop\a\CMS\CMS.Core\obj\Debug\netstandard2.0\CMS.Core.AssemblyInfo.cs
+C:\Users\Shadm\OneDrive\Desktop\a\CMS\CMS.Core\obj\Debug\netstandard2.0\CMS.Core.csproj.CopyComplete
+C:\Users\Shadm\OneDrive\Desktop\a\CMS\CMS.Core\obj\Debug\netstandard2.0\CMS.Core.dll
+C:\Users\Shadm\OneDrive\Desktop\a\CMS\CMS.Core\obj\Debug\netstandard2.0\CMS.Core.pdb

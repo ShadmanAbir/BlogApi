@@ -1,0 +1,34 @@
+C:\Users\Ashraful Islam\Desktop\a\CMS\CMS.Web\bin\Debug\netcoreapp2.0\CMS.Web.deps.json
+C:\Users\Ashraful Islam\Desktop\a\CMS\CMS.Web\bin\Debug\netcoreapp2.0\CMS.Web.runtimeconfig.json
+C:\Users\Ashraful Islam\Desktop\a\CMS\CMS.Web\bin\Debug\netcoreapp2.0\CMS.Web.runtimeconfig.dev.json
+C:\Users\Ashraful Islam\Desktop\a\CMS\CMS.Web\bin\Debug\netcoreapp2.0\CMS.Web.dll
+C:\Users\Ashraful Islam\Desktop\a\CMS\CMS.Web\bin\Debug\netcoreapp2.0\CMS.Web.pdb
+C:\Users\Ashraful Islam\Desktop\a\CMS\CMS.Web\bin\Debug\netcoreapp2.0\CMS.Core.dll
+C:\Users\Ashraful Islam\Desktop\a\CMS\CMS.Web\bin\Debug\netcoreapp2.0\CMS.Domain.dll
+C:\Users\Ashraful Islam\Desktop\a\CMS\CMS.Web\bin\Debug\netcoreapp2.0\CMS.Core.pdb
+C:\Users\Ashraful Islam\Desktop\a\CMS\CMS.Web\bin\Debug\netcoreapp2.0\CMS.Domain.pdb
+C:\Users\Ashraful Islam\Desktop\a\CMS\CMS.Web\obj\Debug\netcoreapp2.0\CMS.Web.csprojResolveAssemblyReference.cache
+C:\Users\Ashraful Islam\Desktop\a\CMS\CMS.Web\obj\Debug\netcoreapp2.0\CMS.Web.csproj.CoreCompileInputs.cache
+C:\Users\Ashraful Islam\Desktop\a\CMS\CMS.Web\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
+C:\Users\Ashraful Islam\Desktop\a\CMS\CMS.Web\obj\Debug\netcoreapp2.0\CMS.Web.AssemblyInfoInputs.cache
+C:\Users\Ashraful Islam\Desktop\a\CMS\CMS.Web\obj\Debug\netcoreapp2.0\CMS.Web.AssemblyInfo.cs
+C:\Users\Ashraful Islam\Desktop\a\CMS\CMS.Web\obj\Debug\netcoreapp2.0\CMS.Web.csproj.CopyComplete
+C:\Users\Ashraful Islam\Desktop\a\CMS\CMS.Web\obj\Debug\netcoreapp2.0\CMS.Web.dll
+C:\Users\Ashraful Islam\Desktop\a\CMS\CMS.Web\obj\Debug\netcoreapp2.0\CMS.Web.pdb
+C:\Users\Shadm\OneDrive\Desktop\a\CMS\CMS.Web\bin\Debug\netcoreapp2.0\CMS.Web.deps.json
+C:\Users\Shadm\OneDrive\Desktop\a\CMS\CMS.Web\bin\Debug\netcoreapp2.0\CMS.Web.runtimeconfig.json
+C:\Users\Shadm\OneDrive\Desktop\a\CMS\CMS.Web\bin\Debug\netcoreapp2.0\CMS.Web.runtimeconfig.dev.json
+C:\Users\Shadm\OneDrive\Desktop\a\CMS\CMS.Web\bin\Debug\netcoreapp2.0\CMS.Web.dll
+C:\Users\Shadm\OneDrive\Desktop\a\CMS\CMS.Web\bin\Debug\netcoreapp2.0\CMS.Web.pdb
+C:\Users\Shadm\OneDrive\Desktop\a\CMS\CMS.Web\bin\Debug\netcoreapp2.0\CMS.Core.dll
+C:\Users\Shadm\OneDrive\Desktop\a\CMS\CMS.Web\bin\Debug\netcoreapp2.0\CMS.Domain.dll
+C:\Users\Shadm\OneDrive\Desktop\a\CMS\CMS.Web\bin\Debug\netcoreapp2.0\CMS.Core.pdb
+C:\Users\Shadm\OneDrive\Desktop\a\CMS\CMS.Web\bin\Debug\netcoreapp2.0\CMS.Domain.pdb
+C:\Users\Shadm\OneDrive\Desktop\a\CMS\CMS.Web\obj\Debug\netcoreapp2.0\CMS.Web.csprojResolveAssemblyReference.cache
+C:\Users\Shadm\OneDrive\Desktop\a\CMS\CMS.Web\obj\Debug\netcoreapp2.0\CMS.Web.csproj.CoreCompileInputs.cache
+C:\Users\Shadm\OneDrive\Desktop\a\CMS\CMS.Web\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
+C:\Users\Shadm\OneDrive\Desktop\a\CMS\CMS.Web\obj\Debug\netcoreapp2.0\CMS.Web.AssemblyInfoInputs.cache
+C:\Users\Shadm\OneDrive\Desktop\a\CMS\CMS.Web\obj\Debug\netcoreapp2.0\CMS.Web.AssemblyInfo.cs
+C:\Users\Shadm\OneDrive\Desktop\a\CMS\CMS.Web\obj\Debug\netcoreapp2.0\CMS.Web.csproj.CopyComplete
+C:\Users\Shadm\OneDrive\Desktop\a\CMS\CMS.Web\obj\Debug\netcoreapp2.0\CMS.Web.dll
+C:\Users\Shadm\OneDrive\Desktop\a\CMS\CMS.Web\obj\Debug\netcoreapp2.0\CMS.Web.pdb

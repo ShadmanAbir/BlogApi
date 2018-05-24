@@ -1,0 +1,88 @@
+﻿@model CMS.Web.Data.ApplicationUser
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1, maximum-scale=1" />
+    <title>Profile</title>
+    <link href="" rel="stylesheet" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Maven+Pro:400,500" rel="stylesheet" />
+    <link href="~/fonts/foundation-icons/foundation-icons.css" rel="stylesheet" />
+    <link href="~/css/profile.css" rel="stylesheet" />
+</head>
+<body>
+    <br />
+    @if (Model.UserName.Equals(User.Identity.Name))
+    {
+        <div style="float:right;"> <a asp-action="EditProfile" class="btn btn-outline-secondary">Edit Profile</a></div>
+    }
+    <div style="float:right;"> <a asp-action="BlockUser" asp-route-id="@Model.Id" class="btn btn-outline-secondary">Block User</a></div>
+    <div class="wrapper">
+
+
+        <section id="about">
+            <div class="row">
+                <div class="small-12 large-8 large-offset-2 columns text-center" style="width:100%">
+                    @if (String.IsNullOrEmpty(@Model.ProfileImage))
+                    {
+                       
+                            <img alt="headshot" class="img-circle" src='@Url.Content("~/ProfileImagefiles/Profile_Common.png")' />
+                        
+                    }
+                    else
+                    {
+                        <img alt="headshot" class="img-circle" src='@Url.Content("~/ProfileImagefiles/"+Model.ProfileImage)' />
+                    }
+
+                    <div class="details">
+                        <h2 style="height:5px;">@Model.FullName<br></h2>
+                        <h5>
+                            <i style="margin-top:0px;" class="fa fa-mars"></i>@Model.Gender<br /><br />
+                            <i style="margin-top:0px;" class="glyphicon glyphicon-earphone"></i>@Model.PhoneNumber
+                        </h5>
+                        <br />
+                     </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="small-12 large-8 large-offset-2 columns text-center" style="width:100%">
+                    <div class="cta text-center" style="width:100%"><a class="my-button cta-button expand form-button" href="mailto:@Model.Email">Get In Touch</a></div>
+                    <div class="small-12 column">
+                        <div class="my-arrow-div text-center">
+                            <a href="@Model.GithubID"><i class="fa fa-github-alt fa-2x"></i></a>
+                            <a href="@Model.LinkedinID"><i class="fa fa-linkedin fa-2x" aria-hidden="true"></i></a>
+                            <a href="@Model.FbID"><i class="fa fa-facebook fa-2x"></i></a>
+                            <a href="@Model.TwitterID"><i class="fa fa-twitter fa-2x"></i></a>
+                            <a href="@Model.InstagramID"><i class="fa fa-instagram fa-2x"></i></a>
+                            <a href="@Model.YoutubeID"><i class="fa fa-youtube fa-2x"></i></a>
+
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="small-12 column">
+                    <div class="my-arrow-div text-center"></div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <footer id="footer">
+            <div class="row text-center">
+                <div class="small-12 medium-6 medium-offset-3 columns">
+
+
+                    <p id="copyright">Copyright &copy; 2018&nbsp;| CMS</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="assets/scripts/app.js" charset="utf-8"></script>
+</body>
+</html>

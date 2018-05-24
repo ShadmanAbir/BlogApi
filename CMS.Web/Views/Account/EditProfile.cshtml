@@ -1,0 +1,99 @@
+﻿@model CMS.Web.Data.ApplicationUser
+
+@{
+    ViewData["Title"] = "Edit Profile";
+}
+
+<h2>Edit Profile</h2>
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="Edit" enctype="multipart/form-data" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="FullName" class="control-label"></label>
+                <input asp-for="FullName" class="form-control" />
+                <span asp-validation-for="FullName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Gender"></label>
+                <select asp-for="Gender" type="" class="form-control">
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Male">Other</option>
+
+                </select>
+                <span asp-validation-for="Gender" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PhoneNumber" class="control-label"></label>
+                <input asp-for="PhoneNumber" class="form-control" />
+                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProfileImage" class="control-label"></label>
+                <input name="profilepic" type="file" class="form-control" />
+                <span asp-validation-for="ProfileImage" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="FbID" class="control-label"></label>
+                <input asp-for="FbID" class="form-control" />
+                <span asp-validation-for="FbID" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="TwitterID" class="control-label"></label>
+                <input asp-for="TwitterID" class="form-control" />
+                <span asp-validation-for="TwitterID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LinkedinID" class="control-label"></label>
+                <input asp-for="LinkedinID" class="form-control" />
+                <span asp-validation-for="LinkedinID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="InstagramID" class="control-label"></label>
+                <input asp-for="InstagramID" class="form-control" />
+                <span asp-validation-for="InstagramID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="YoutubeID" class="control-label"></label>
+                <input asp-for="YoutubeID" class="form-control" />
+                <span asp-validation-for="YoutubeID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GithubID" class="control-label"></label>
+                <input asp-for="GithubID" class="form-control" />
+                <span asp-validation-for="GithubID" class="text-danger"></span>
+            </div>
+
+            <input type="hidden" asp-for="Id" />
+            <input type="hidden" asp-for="AccessFailedCount" />
+            <input type="hidden" asp-for="ConcurrencyStamp" />
+            <input type="hidden" asp-for="Email" />
+            <input type="hidden" asp-for="EmailConfirmed" />
+            
+            <input type="hidden" asp-for="IsActive" />
+            <input type="hidden" asp-for="LockoutEnabled" />
+            <input type="hidden" asp-for="LockoutEnd" />
+            <input type="hidden" asp-for="NormalizedEmail" />
+            <input type="hidden" asp-for="NormalizedUserName" />
+            <input type="hidden" asp-for="PasswordHash" />
+            <input type="hidden" asp-for="PhoneNumberConfirmed" />
+            <input type="hidden" asp-for="SecurityStamp" />
+            <input type="hidden" asp-for="TwoFactorEnabled" />
+            <input type="hidden" asp-for="UserName" />
+
+
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<br />
+<br />
+<br />
+
