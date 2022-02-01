@@ -16,3 +16,13 @@ C:\Users\Shadm\OneDrive\Desktop\a\CMS\CMS.Domain\obj\Debug\netstandard2.0\CMS.Do
 C:\Users\Shadm\OneDrive\Desktop\a\CMS\CMS.Domain\obj\Debug\netstandard2.0\CMS.Domain.dll
 C:\Users\Shadm\OneDrive\Desktop\a\CMS\CMS.Domain\obj\Debug\netstandard2.0\CMS.Domain.pdb
 C:\Users\Shadm\OneDrive\Desktop\a\CMS\CMS.Domain\obj\Debug\netstandard2.0\CMS.Domain.csprojResolveAssemblyReference.cache
+C:\personal\CMS.Domain\bin\Debug\netstandard2.0\CMS.Domain.deps.json
+C:\personal\CMS.Domain\bin\Debug\netstandard2.0\CMS.Domain.dll
+C:\personal\CMS.Domain\bin\Debug\netstandard2.0\CMS.Domain.pdb
+C:\personal\CMS.Domain\obj\Debug\netstandard2.0\CMS.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\personal\CMS.Domain\obj\Debug\netstandard2.0\CMS.Domain.AssemblyInfoInputs.cache
+C:\personal\CMS.Domain\obj\Debug\netstandard2.0\CMS.Domain.AssemblyInfo.cs
+C:\personal\CMS.Domain\obj\Debug\netstandard2.0\CMS.Domain.csproj.CoreCompileInputs.cache
+C:\personal\CMS.Domain\obj\Debug\netstandard2.0\CMS.Domain.dll
+C:\personal\CMS.Domain\obj\Debug\netstandard2.0\CMS.Domain.pdb
+C:\personal\CMS.Domain\obj\Debug\netstandard2.0\CMS.Domain.csproj.AssemblyReference.cache

@@ -22,3 +22,16 @@ C:\Users\Shadm\OneDrive\Desktop\a\CMS\CMS.Core\obj\Debug\netstandard2.0\CMS.Core
 C:\Users\Shadm\OneDrive\Desktop\a\CMS\CMS.Core\obj\Debug\netstandard2.0\CMS.Core.csproj.CopyComplete
 C:\Users\Shadm\OneDrive\Desktop\a\CMS\CMS.Core\obj\Debug\netstandard2.0\CMS.Core.dll
 C:\Users\Shadm\OneDrive\Desktop\a\CMS\CMS.Core\obj\Debug\netstandard2.0\CMS.Core.pdb
+C:\personal\CMS.Core\bin\Debug\netstandard2.0\CMS.Core.deps.json
+C:\personal\CMS.Core\bin\Debug\netstandard2.0\CMS.Core.dll
+C:\personal\CMS.Core\bin\Debug\netstandard2.0\CMS.Core.pdb
+C:\personal\CMS.Core\bin\Debug\netstandard2.0\CMS.Domain.dll
+C:\personal\CMS.Core\bin\Debug\netstandard2.0\CMS.Domain.pdb
+C:\personal\CMS.Core\obj\Debug\netstandard2.0\CMS.Core.csproj.AssemblyReference.cache
+C:\personal\CMS.Core\obj\Debug\netstandard2.0\CMS.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\personal\CMS.Core\obj\Debug\netstandard2.0\CMS.Core.AssemblyInfoInputs.cache
+C:\personal\CMS.Core\obj\Debug\netstandard2.0\CMS.Core.AssemblyInfo.cs
+C:\personal\CMS.Core\obj\Debug\netstandard2.0\CMS.Core.csproj.CoreCompileInputs.cache
+C:\personal\CMS.Core\obj\Debug\netstandard2.0\CMS.Core.csproj.CopyComplete
+C:\personal\CMS.Core\obj\Debug\netstandard2.0\CMS.Core.dll
+C:\personal\CMS.Core\obj\Debug\netstandard2.0\CMS.Core.pdb
