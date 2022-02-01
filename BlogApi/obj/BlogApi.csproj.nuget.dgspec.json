@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\personal\\BlogApi\\BlogApi.csproj": {}
+    "c:\\personal\\BlogApi\\BlogApi.csproj": {}
   },
   "projects": {
-    "C:\\personal\\BlogApi\\BlogApi.csproj": {
+    "c:\\personal\\BlogApi\\BlogApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\personal\\BlogApi\\BlogApi.csproj",
+        "projectUniqueName": "c:\\personal\\BlogApi\\BlogApi.csproj",
         "projectName": "BlogApi",
-        "projectPath": "C:\\personal\\BlogApi\\BlogApi.csproj",
+        "projectPath": "c:\\personal\\BlogApi\\BlogApi.csproj",
         "packagesPath": "C:\\Users\\NTITAS-PC-03\\.nuget\\packages\\",
-        "outputPath": "C:\\personal\\BlogApi\\obj\\",
+        "outputPath": "c:\\personal\\BlogApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\NTITAS-PC-03\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -40,9 +40,21 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[11.0.0, )"
+            },
+            "Microsoft.Bcl.AsyncInterfaces": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[6.0.1, )"
+            },
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[6.0.0, )"
             },
             "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
               "target": "Package",

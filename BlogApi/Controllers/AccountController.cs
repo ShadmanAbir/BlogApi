@@ -120,7 +120,7 @@ namespace BlogApi.Controllers
                 _BlogApiContext.Users.Update(applicationUser);
 
                 
-                _BlogApiContext.SavechangesAsyncChanges();
+                _BlogApiContext.SaveChangesAsync();
 
             
             return RedirectToAction(nameof(Profile), new { id = User.Identity.Name });
@@ -169,7 +169,7 @@ namespace BlogApi.Controllers
             var users = _BlogApiContext.Users.SingleOrDefault(m => m.Id.Equals(id));
             users.IsActive = 1;
             _BlogApiContext.Users.Update(users);
-            _BlogApiContext.SavechangesAsyncChanges();
+            _BlogApiContext.SaveChangesAsync();
 
             return RedirectToAction(nameof(BlockedUser));
         }
@@ -180,7 +180,7 @@ namespace BlogApi.Controllers
             var users = _BlogApiContext.Users.SingleOrDefault(m => m.Id.Equals(id));
             users.IsActive = 0;
             _BlogApiContext.Users.Update(users);
-            _BlogApiContext.SavechangesAsyncChanges();
+            _BlogApiContext.SaveChangesAsync();
 
             return RedirectToAction(nameof(BlockedUser));
         }

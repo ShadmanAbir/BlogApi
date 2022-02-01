@@ -1,5 +1,4 @@
-﻿using BlogApi.Interfaces;
-using BlogApi.Models;
+﻿using BlogApi.Models;
 using BlogApi.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -8,7 +7,7 @@ using System.Linq;
 
 namespace BlogApi.Services
 {
-    public class CommentService : ICommentService
+    public class CommentService 
     {
         private BlogApiContext _BlogApiContext;
         public CommentService(BlogApiContext BlogApiContext){
@@ -17,7 +16,7 @@ namespace BlogApi.Services
 
         public IEnumerable<CommentViewModel> GetChildComment()
         {
-            var data = (from s in _BlogApiContext.CommentRepository.Get()
+            var data = (from s in _BlogApiContext.Comment
                         where s.ParentID != 0 && s.IsApproved == 1
                         select new CommentViewModel
                         {
@@ -34,8 +33,8 @@ namespace BlogApi.Services
 
         public IEnumerable<CommentViewModel> CommentsToApprove(string User)
         {
-            var data = (from s in _BlogApiContext.CommentRepository.Get()
-                        join c in _BlogApiContext.Post.Get() on s.PostID equals c.PostID
+            var data = (from s in _BlogApiContext.Comment
+                        join c in _BlogApiContext.Post on s.PostID equals c.PostID
                         where c.Author == User && s.IsApproved == 0
                         select new CommentViewModel
                         {
@@ -62,15 +61,15 @@ namespace BlogApi.Services
                 ParentID = commentVM.ParentID
 
             };
-            _BlogApiContext.CommentRepository.AddAsync(comment);
-            _BlogApiContext.SavechangesAsync();
+            _BlogApiContext.Comment.AddAsync(comment);
+            _BlogApiContext.SaveChangesAsync();
             
             return comment;
         }
 
         public IEnumerable<CommentViewModel> GetCommentByAuthor(string User)
         {
-            var data = (from s in _BlogApiContext.CommentRepository.Get()
+            var data = (from s in _BlogApiContext.Comment
                          where s.CommentedBy == User && s.IsApproved == 1
                          select new CommentViewModel
                          {
@@ -85,7 +84,7 @@ namespace BlogApi.Services
 
         public IEnumerable<CommentViewModel> GetCommentByPost(int postID)
         {
-            var data = (from s in _BlogApiContext.CommentRepository.Get()
+            var data = (from s in _BlogApiContext.Comment
                         where s.PostID == postID && s.ParentID ==0 && s.IsApproved == 1
                         select new CommentViewModel
                         {
@@ -100,24 +99,24 @@ namespace BlogApi.Services
             return data;
         }
 
-        public Comment Accept(int id)
+        public async Task<Comment> Accept(int id)
         {
-            var comment = _BlogApiContext.CommentRepository.GetById(id);
+            var comment = _BlogApiContext.Comment.Find(id);
             comment.IsApproved = 1;
 
-            _BlogApiContext.CommentRepository.Update(comment);
-            _BlogApiContext.SavechangesAsync();
+            _BlogApiContext.Comment.Update(comment);
+            await _BlogApiContext.SaveChangesAsync();
             return comment;
         }
 
         public Comment Reject(int id)
         {
 
-            var comment = _BlogApiContext.CommentRepository.GetById(id);
+            var comment = _BlogApiContext.Comment.Find(id);
             comment.IsApproved = 2;
 
-            _BlogApiContext.CommentRepository.Update(comment);
-            _BlogApiContext.SavechangesAsync();
+            _BlogApiContext.Comment.Update(comment);
+            _BlogApiContext.SaveChangesAsync();
             return comment;
         }
 

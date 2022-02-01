@@ -5,8 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using BlogApi.Models;
-using BlogApi.Interfaces;
+using BlogApi.Services;
 using BlogApi.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using System.IO;
@@ -18,12 +17,12 @@ namespace BlogApi.Controllers
     {
 
 
-        private IPostService postService;
-        private ICommentService commentService;
-        private ITermService termService;
-        private INotificationService notificationService;
+        private PostService postService;
+        private CommentService commentService;
+        private TermService termService;
+        private NotificationService notificationService;
         
-        public PostController(IPostService _postService, ICommentService _commentService, ITermService _termService, INotificationService _notificationService)
+        public PostController(PostService _postService, CommentService _commentService, TermService _termService, NotificationService _notificationService)
         {
             postService = _postService;
             commentService = _commentService;
@@ -48,18 +47,18 @@ namespace BlogApi.Controllers
             
         }
 
-        public ActionResult Create()
+        public async Task<ActionResult> Create()
         {
 
             var item = new PostViewModel
             {
-                Terms = termService.GetAllTerm()
+                Terms = await termService.GetAllTerm()
             };
             return View(item);
         }
 
         [HttpPost]
-        public ActionResult Create(PostViewModel postVM)
+        public async Task<ActionResult> Create(PostViewModel postVM)
         {
             if (postVM.Image != null && postVM.Image.Length != 0)
             {
@@ -86,7 +85,7 @@ namespace BlogApi.Controllers
             var post=postService.Create(postVM, posttermVM, poststatusVM);
             var item = new PostViewModel
             {
-                Terms = termService.GetAllTerm()
+                Terms = await termService.GetAllTerm()
             };
             return RedirectToAction(nameof(Postview), new { id = post.PostID.ToString() });
         }

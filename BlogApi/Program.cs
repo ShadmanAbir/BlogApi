@@ -1,7 +1,14 @@
+using BlogApi.Models;
+using BlogApi.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
+builder.Services.AddScoped<BlogApiContext>();
+builder.Services.AddScoped<PostService>();
+builder.Services.AddScoped<TermService>();
+builder.Services.AddScoped<NotificationService>();
+builder.Services.AddScoped<CommentService>();
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

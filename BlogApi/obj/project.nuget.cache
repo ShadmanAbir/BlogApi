@@ -1,9 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "BYsavQP9OZce290y0g8eitemE+UWhISq6/CQOmRveI6p3bqiVwoMC6RM94wGzLzSJB/AAmp84dtmlGQfiUwQvw==",
+  "dgSpecHash": "wiNR1wMFPzzSDXaslVlrmPhHwYJEVdw6c8+RDoonq4ZGLTVgvrggmkVRgif1qjWSILy4xPlmp5YMJNxszOfWzA==",
   "success": true,
-  "projectFilePath": "C:\\personal\\BlogApi\\BlogApi.csproj",
+  "projectFilePath": "c:\\personal\\BlogApi\\BlogApi.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\NTITAS-PC-03\\.nuget\\packages\\automapper\\11.0.0\\automapper.11.0.0.nupkg.sha512",
+    "C:\\Users\\NTITAS-PC-03\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\6.0.0\\microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",
+    "C:\\Users\\NTITAS-PC-03\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\NTITAS-PC-03\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.1\\microsoft.entityframeworkcore.6.0.1.nupkg.sha512",
     "C:\\Users\\NTITAS-PC-03\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\6.0.1\\microsoft.entityframeworkcore.abstractions.6.0.1.nupkg.sha512",
     "C:\\Users\\NTITAS-PC-03\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\6.0.1\\microsoft.entityframeworkcore.analyzers.6.0.1.nupkg.sha512",

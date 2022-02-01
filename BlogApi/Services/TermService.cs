@@ -1,5 +1,4 @@
-﻿using BlogApi.Interfaces;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 using BlogApi.Models;
@@ -9,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BlogApi.Services
 {
-    public class TermService : ITermService
+    public class TermService
     {
         private BlogApiContext _BlogApiContext;
 
@@ -27,28 +26,28 @@ namespace BlogApi.Services
             };
 
             await _BlogApiContext.Term.AddAsync(term);
-            await _BlogApiContext.SavechangesAsyncchangesAsync();
+            await _BlogApiContext.SaveChangesAsync();
 
             return term;
         }
 
         public async Task<Term> Update(TermViewModel termVM)
         {
-            var term = _BlogApiContext.Term.GetById(termVM.TermID);
+            var term = await _BlogApiContext.Term.SingleOrDefaultAsync(d => d.TermID == termVM.TermID);
 
             term.TermID = termVM.TermID;
             term.Type = termVM.Type;
             term.Content = termVM.Content;
 
             _BlogApiContext.Term.Update(term);
-            _BlogApiContext.SavechangesAsync();
+            await _BlogApiContext.SaveChangesAsync();
 
             return term;
         }
 
         public async Task<TermViewModel> GetTermByID(int id)
         {
-            var data = (from s in _BlogApiContext.Term.Get()
+            var data = (from s in _BlogApiContext.Term
                         where s.TermID == id
                         select new TermViewModel
                         {
@@ -62,7 +61,7 @@ namespace BlogApi.Services
 
         public async Task<IEnumerable<TermViewModel>> GetAllTerm()
         {
-            var data = (from s in _BlogApiContext.Term.Get()
+            var data = (from s in _BlogApiContext.Term
                         select new TermViewModel
                         {
                             TermID = s.TermID,
@@ -75,9 +74,9 @@ namespace BlogApi.Services
 
         public IEnumerable<TermViewModel> GetTermByPost(int postID)
         {
-            var data = (from p in _BlogApiContext.Post.Get()
-                        join pt in _BlogApiContext.PostTerm.Get() on p.PostID equals pt.PostID
-                        join t in _BlogApiContext.Term.Get() on pt.TermID equals t.TermID
+            var data = (from p in _BlogApiContext.Post
+                        join pt in _BlogApiContext.PostTerm on p.PostID equals pt.PostID
+                        join t in _BlogApiContext.Term on pt.TermID equals t.TermID
                         where p.PostID == postID
                         select new TermViewModel
                         {
