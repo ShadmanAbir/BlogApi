@@ -3,9 +3,14 @@
   "ProjectMap": {
     "679bf232-ec51-411d-b8dc-04e8dbcbe407": {
       "ProjectGuid": "679bf232-ec51-411d-b8dc-04e8dbcbe407",
-      "DisplayName": "CMS.Web",
+      "DisplayName": "BlogApi",
       "ColorIndex": 0
+    },
+    "fbbf30c7-1e55-4551-bfce-e3aed63150e7": {
+      "ProjectGuid": "fbbf30c7-1e55-4551-bfce-e3aed63150e7",
+      "DisplayName": "BlogApi",
+      "ColorIndex": 1
     }
   },
-  "NextColorIndex": 1
+  "NextColorIndex": 2
 }
