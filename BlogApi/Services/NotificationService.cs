@@ -31,7 +31,7 @@ namespace BlogApi.Services
              UserID = CommentVM.CommentedBy
             };
 
-            _BlogApiContext.Notification.Insert(notification);
+            _BlogApiContext.Notification.AddAsync(notification);
             _BlogApiContext.SavechangesAsync();
 
             return notification;
@@ -39,7 +39,7 @@ namespace BlogApi.Services
 
         public IEnumerable<NotificationViewModel> GetNotification(string User)
         {
-            var data = (from p in _BlogApiContext.PostRepository.Get()
+            var data = (from p in _BlogApiContext.Post.Get()
                         join n in _BlogApiContext.Notification.Get() on p.PostID equals n.PostID
                         join c in _BlogApiContext.CommentRepository.Get() on n.CommentID equals c.CommentID into comm
                         from x in comm.DefaultIfEmpty()
@@ -58,7 +58,7 @@ namespace BlogApi.Services
         public int NotificationCount(string User)
         {
 
-            int a = (from p in _BlogApiContext.PostRepository.Get()
+            int a = (from p in _BlogApiContext.Post.Get()
                      join n in _BlogApiContext.Notification.Get() on p.PostID equals n.PostID
                      join c in _BlogApiContext.CommentRepository.Get() on n.CommentID equals c.CommentID into comm
                      from x in comm.DefaultIfEmpty()

@@ -75,7 +75,7 @@ namespace BlogApi.Services
 
         public IEnumerable<TermViewModel> GetTermByPost(int postID)
         {
-            var data = (from p in _BlogApiContext.PostRepository.Get()
+            var data = (from p in _BlogApiContext.Post.Get()
                         join pt in _BlogApiContext.PostTerm.Get() on p.PostID equals pt.PostID
                         join t in _BlogApiContext.Term.Get() on pt.TermID equals t.TermID
                         where p.PostID == postID

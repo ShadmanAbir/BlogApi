@@ -20,7 +20,7 @@ namespace BlogApi.Services
             _BlogApiContext = BlogApiContext;
         }
 
-        public Post Create(PostViewModel postVM, PostTermViewModel posttermVM,PostStatusViewModel poststatusVM)
+        public async Task<Post> Create(PostViewModel postVM, PostTermViewModel posttermVM,PostStatusViewModel poststatusVM)
         {
             var post = new Post
             {
@@ -50,7 +50,7 @@ namespace BlogApi.Services
             {
                 ViewCount = 0
             };
-            _BlogApiContext.PostRepository.Insert(post);
+            _BlogApiContext.Post.AddAsync(post);
             _BlogApiContext.SavechangesAsync();
 
             return post;
@@ -58,7 +58,7 @@ namespace BlogApi.Services
 
         public Post Update(PostViewModel postVM)
         {
-            var post = _BlogApiContext.PostRepository.GetById(postVM.PostID);
+            var post = _BlogApiContext.Post.GetById(postVM.PostID);
 
             post.Title = postVM.Title;
             post.Content = postVM.Content;
@@ -67,7 +67,7 @@ namespace BlogApi.Services
             post.ModifiedBy = postVM.ModifiedBy;
             post.ModifiedDate = postVM.ModifiedDate;
 
-            _BlogApiContext.PostRepository.Update(post);
+            _BlogApiContext.Post.Update(post);
             _BlogApiContext.SavechangesAsync();
 
             return post;
@@ -75,7 +75,7 @@ namespace BlogApi.Services
 
         public IEnumerable<PostViewModel> GetAllPost()
         {
-            var data = (from s in _BlogApiContext.PostRepository.Get()
+            var data = (from s in _BlogApiContext.Post.Get()
                         select new PostViewModel
                         {
                             PostID = s.PostID,
@@ -97,7 +97,7 @@ namespace BlogApi.Services
 
         public IEnumerable<PostViewModel> GetPostByAuthor(string author)
         {
-            var data = (from s in _BlogApiContext.PostRepository.Get()
+            var data = (from s in _BlogApiContext.Post.Get()
                         where s.Author == author
                         select new PostViewModel
                         {
@@ -118,7 +118,7 @@ namespace BlogApi.Services
 
         public PostViewModel GetPostByID(int id)
         {
-            var data = (from s in _BlogApiContext.PostRepository.Get()
+            var data = (from s in _BlogApiContext.Post.Get()
                         where s.PostID == id
                         select new PostViewModel
                         {
@@ -138,7 +138,7 @@ namespace BlogApi.Services
 
         public IEnumerable<PostViewModel> GetPostByTerm(int termID)
         {
-            var data = (from p in _BlogApiContext.PostRepository.Get()
+            var data = (from p in _BlogApiContext.Post.Get()
                         join pt in _BlogApiContext.PostTerm.Get() on p.PostID equals pt.PostID
                         where pt.TermID == termID
                         select new PostViewModel
@@ -159,7 +159,7 @@ namespace BlogApi.Services
         }
         public IEnumerable<TermViewModel> GetTermByPost(int postID)
         {
-            var data = (from p in _BlogApiContext.PostRepository.Get()
+            var data = (from p in _BlogApiContext.Post.Get()
                         join pt in _BlogApiContext.PostTerm.Get() on p.PostID equals pt.PostID
                         join t in _BlogApiContext.Term.Get() on pt.TermID equals t.TermID
                         where p.PostID == postID
@@ -190,7 +190,7 @@ namespace BlogApi.Services
 
         public IEnumerable<PostViewModel> Search(string content)
         {
-            var post = (from s in _BlogApiContext.PostRepository.Get()
+            var post = (from s in _BlogApiContext.Post.Get()
                         where s.Content.Contains(content) || s.Title.Contains(content) || s.Author.Contains(content) 
                         select new PostViewModel
                         {
@@ -211,10 +211,10 @@ namespace BlogApi.Services
 
         public PostStatus UpdatePostView(PostStatusViewModel postStatusVM)
         {
-            var poststatus =_BlogApiContext.PostStatusRepository.GetById(postStatusVM.PostStatusID);
+            var poststatus =_BlogApiContext.PostStatus.GetById(postStatusVM.PostStatusID);
             poststatus.ViewCount = postStatusVM.ViewCount + 1;
 
-            _BlogApiContext.PostStatusRepository.Update(poststatus);
+            _BlogApiContext.PostStatus.Update(poststatus);
             _BlogApiContext.SavechangesAsync();
 
             return poststatus;
@@ -223,7 +223,7 @@ namespace BlogApi.Services
 
         public PostStatusViewModel GetPostView(int postID)
         {
-            var postView = (from s in _BlogApiContext.PostStatusRepository.Get()
+            var postView = (from s in _BlogApiContext.PostStatus.Get()
                         where s.PostID == postID
                         select new PostStatusViewModel
                         {
@@ -238,8 +238,8 @@ namespace BlogApi.Services
 
         public IEnumerable<PostStatusViewModel> GetPostViewbByAuthor(string author)
         {
-            var postView = (from s in _BlogApiContext.PostStatusRepository.Get()
-                            join pt in _BlogApiContext.PostRepository.Get() on s.PostID equals pt.PostID
+            var postView = (from s in _BlogApiContext.PostStatus.Get()
+                            join pt in _BlogApiContext.Post.Get() on s.PostID equals pt.PostID
                             where pt.Author == author
                             select new PostStatusViewModel
                             {
@@ -252,7 +252,7 @@ namespace BlogApi.Services
 
         public PostViewModel GetLastPost(string user)
         {
-            var data = (from s in _BlogApiContext.PostRepository.Get()
+            var data = (from s in _BlogApiContext.Post.Get()
                         where s.Author == user orderby s.CreatedDate descending
                         select new PostViewModel
                         {
@@ -274,8 +274,8 @@ namespace BlogApi.Services
 
         public PostViewModel GetFeaturedPost()
         {
-            var data = (from s in _BlogApiContext.PostRepository.Get()
-                        join pt in _BlogApiContext.PostStatusRepository.Get() on s.PostID equals pt.PostID
+            var data = (from s in _BlogApiContext.Post.Get()
+                        join pt in _BlogApiContext.PostStatus.Get() on s.PostID equals pt.PostID
                         orderby pt.ViewCount descending
                         select new PostViewModel
                         {
@@ -295,12 +295,12 @@ namespace BlogApi.Services
 
         public Post Delete(PostViewModel postVM)
         {
-            var post = _BlogApiContext.PostRepository.GetById(postVM.PostID);
+            var post = _BlogApiContext.Post.GetById(postVM.PostID);
 
             post.IsDeleted = 1;
 
 
-            _BlogApiContext.PostRepository.Update(post);
+            _BlogApiContext.Post.Update(post);
             _BlogApiContext.SavechangesAsync();
 
             return post;
@@ -319,7 +319,7 @@ namespace BlogApi.Services
 
         public IEnumerable<PostViewModel> GetRank()
         {
-            var post = (from pr in _BlogApiContext.PostRepository.Get()
+            var post = (from pr in _BlogApiContext.Post.Get()
                        group pr.Author by new { pr.Author} into g
                        select new PostViewModel
                         {

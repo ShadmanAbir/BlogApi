@@ -1,7 +1,0 @@
-C:\personal\BlogApi\obj\Debug\net6.0\BlogApi.csproj.AssemblyReference.cache
-C:\personal\BlogApi\obj\Debug\net6.0\BlogApi.GeneratedMSBuildEditorConfig.editorconfig
-C:\personal\BlogApi\obj\Debug\net6.0\BlogApi.AssemblyInfoInputs.cache
-C:\personal\BlogApi\obj\Debug\net6.0\BlogApi.AssemblyInfo.cs
-C:\personal\BlogApi\obj\Debug\net6.0\BlogApi.csproj.CoreCompileInputs.cache
-C:\personal\BlogApi\obj\Debug\net6.0\BlogApi.MvcApplicationPartsAssemblyInfo.cs
-C:\personal\BlogApi\obj\Debug\net6.0\BlogApi.MvcApplicationPartsAssemblyInfo.cache

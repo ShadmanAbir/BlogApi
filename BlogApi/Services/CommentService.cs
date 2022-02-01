@@ -35,7 +35,7 @@ namespace BlogApi.Services
         public IEnumerable<CommentViewModel> CommentsToApprove(string User)
         {
             var data = (from s in _BlogApiContext.CommentRepository.Get()
-                        join c in _BlogApiContext.PostRepository.Get() on s.PostID equals c.PostID
+                        join c in _BlogApiContext.Post.Get() on s.PostID equals c.PostID
                         where c.Author == User && s.IsApproved == 0
                         select new CommentViewModel
                         {
@@ -62,7 +62,7 @@ namespace BlogApi.Services
                 ParentID = commentVM.ParentID
 
             };
-            _BlogApiContext.CommentRepository.Insert(comment);
+            _BlogApiContext.CommentRepository.AddAsync(comment);
             _BlogApiContext.SavechangesAsync();
             
             return comment;
