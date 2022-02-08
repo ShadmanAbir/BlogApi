@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\personal\\BlogApi\\BlogApi.csproj": {}
+    "C:\\personal\\BlogApi\\BlogApi.csproj": {}
   },
   "projects": {
-    "c:\\personal\\BlogApi\\BlogApi.csproj": {
+    "C:\\personal\\BlogApi\\BlogApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\personal\\BlogApi\\BlogApi.csproj",
+        "projectUniqueName": "C:\\personal\\BlogApi\\BlogApi.csproj",
         "projectName": "BlogApi",
-        "projectPath": "c:\\personal\\BlogApi\\BlogApi.csproj",
+        "projectPath": "C:\\personal\\BlogApi\\BlogApi.csproj",
         "packagesPath": "C:\\Users\\NTITAS-PC-03\\.nuget\\packages\\",
-        "outputPath": "c:\\personal\\BlogApi\\obj\\",
+        "outputPath": "C:\\personal\\BlogApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\NTITAS-PC-03\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -15,44 +15,35 @@ namespace BlogApi.Controllers
     //[Authorize]
     public class PostController : Controller
     {
-
-
-        private PostService postService;
-        private CommentService commentService;
-        private TermService termService;
-        private NotificationService notificationService;
+        private readonly PostService _postService;
+        private readonly CommentService _commentService;
+        private readonly TermService _termService;
+        private readonly NotificationService _notificationService;
         
-        public PostController(PostService _postService, CommentService _commentService, TermService _termService, NotificationService _notificationService)
-        {
-            postService = _postService;
-            commentService = _commentService;
-            termService = _termService;
-            notificationService = _notificationService;
+        public PostController(PostService postService, CommentService commentService, TermService termService, NotificationService notificationService){
+            _postService = postService;
+            _commentService = commentService;
+            _termService = termService;
+            _notificationService = notificationService;
         }
         
         public ActionResult Index(string searchcontent)
         {
-                if (String.IsNullOrEmpty(searchcontent))
-                {
-                    var item = postService.GetAllPost();
+                if (String.IsNullOrEmpty(searchcontent)){
+                    var item = _postService.GetAllPost();
                     return View(item);
-                }
-                else
-                {
-                    var item = postService.Search(searchcontent);
+                } else {
+                    var item = _postService.Search(searchcontent);
                     ViewBag.searchcontent = searchcontent;
                     return View(item);
                 }
-
-            
         }
 
         public async Task<ActionResult> Create()
         {
-
             var item = new PostViewModel
             {
-                Terms = await termService.GetAllTerm()
+                Terms = await _termService.GetAllTerm()
             };
             return View(item);
         }
@@ -60,10 +51,9 @@ namespace BlogApi.Controllers
         [HttpPost]
         public async Task<ActionResult> Create(PostViewModel postVM)
         {
-            if (postVM.Image != null && postVM.Image.Length != 0)
-            {
+            if (postVM.Image != null && postVM.Image.Length != 0){
                 postVM.FeaturedImageUrl = "~/Imagefiles/" + postVM.Image.FileName;
-                postService.Upload(postVM.Image);
+                _postService.Upload(postVM.Image);
             }
             
             postVM.Author = User.Identity.Name;
@@ -82,26 +72,25 @@ namespace BlogApi.Controllers
                 
             };
 
-            var post=postService.Create(postVM, posttermVM, poststatusVM);
-            var item = new PostViewModel
-            {
-                Terms = await termService.GetAllTerm()
+            var post = _postService.Create(postVM, posttermVM, poststatusVM);
+            var item = new PostViewModel{
+                Terms = await _termService.GetAllTerm()
             };
             return RedirectToAction(nameof(Postview), new { id = post.PostID.ToString() });
         }
         
         public ActionResult Delete(int id)
         {
-            var post = postService.GetPostByID(id);
+            var post = _postService.GetPostByID(id);
 
-            postService.Delete(post);
+            _postService.Delete(post);
             return View();
         }
 
         public ActionResult Edit(int id)
         {
-            var post = postService.GetPostByID(id);
-
+            var post = _postService.GetPostByID(id);
+ 
             return View(post);
         }
 

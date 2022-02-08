@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "fbbf30c7-1e55-4551-bfce-e3aed63150e7": {
+      "ProjectGuid": "fbbf30c7-1e55-4551-bfce-e3aed63150e7",
+      "DisplayName": "BlogApi",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}

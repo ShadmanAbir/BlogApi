@@ -6,9 +6,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using BlogApi.Models;
-using BlogApi.Interfaces;
 using BlogApi.ViewModels;
 using Microsoft.AspNetCore.Authorization;
+using BlogApi.Services;
 
 
 namespace BlogApi.Controllers
@@ -16,11 +16,9 @@ namespace BlogApi.Controllers
     [Authorize(Roles ="Admin")]
     public class TermController : Controller
     {
-
-
-        private ITermService termService;
+        private readonly TermService termService;
         
-        public TermController(ITermService _termService)
+        public TermController(TermService _termService)
         {
             termService = _termService;           
         }

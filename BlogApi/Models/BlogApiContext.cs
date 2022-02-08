@@ -21,7 +21,5 @@ namespace BlogApi.Models
         public DbSet<PostTerm> PostTerm { get; set; }
         public DbSet<PostStatus> PostStatus { get; set; }
         public DbSet<Notification> Notification { get; set; }
-
-
     }
 }
